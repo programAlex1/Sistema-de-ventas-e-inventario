@@ -11,11 +11,12 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface ITypeBookMapper {
 
-
     @Mapping(source = "id",target = "id")
     @Mapping(source = "name",target = "name")
     TypeBookDto toTypeBookDto(TypeBookEntity typeBookEntity);
+
     @InheritInverseConfiguration
+    @Mapping(target = "bookEntities",ignore = true)
     TypeBookEntity toTypeBookEntity(TypeBookDto typeBookDto);
     List<TypeBookDto> toTypeBooksDto(List<TypeBookEntity> typeBookEntities);
 }

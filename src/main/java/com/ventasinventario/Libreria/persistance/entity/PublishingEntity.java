@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Setter @Getter
 @Entity
 @Table(name = "editorial")
@@ -16,4 +18,7 @@ public class PublishingEntity {
 
     @Column(name = "nombre")
     private String name;
+
+    @OneToMany(mappedBy = "idPublishing",cascade = CascadeType.ALL)
+    private List<BookEntity> bookEntityList;
 }

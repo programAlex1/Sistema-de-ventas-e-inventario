@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionsController {
 
-    @ExceptionHandler(PublishingNameEmptyException.class)
+    @ExceptionHandler({PublishingNameEmptyException.class, PublishindNotExistException.class})
     public ProblemDetail badRequestException(RuntimeException e){
             return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST,e.getMessage());
     }

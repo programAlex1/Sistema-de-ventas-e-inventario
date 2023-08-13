@@ -3,7 +3,9 @@ package com.ventasinventario.Libreria.persistance.mapper;
 
 import com.ventasinventario.Libreria.domain.dto.PublishingDto;
 import com.ventasinventario.Libreria.persistance.entity.PublishingEntity;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -14,6 +16,8 @@ public interface IPublishingMapper {
      * @param publishingEntity Entidad a convertir
      * @return Dto convertido
      */
+    @Mapping(source = "id",target = "id")
+    @Mapping(source = "name",target = "name")
     PublishingDto toPublishingDto(PublishingEntity publishingEntity);
 
     /**
@@ -21,7 +25,8 @@ public interface IPublishingMapper {
      * @param publishingDto Dto a convertir
      * @return Entidad convertida
      */
-
+    @InheritInverseConfiguration
+    @Mapping(target = "bookEntityList", ignore = true)
     PublishingEntity toPublishingEntity(PublishingDto publishingDto);
 
     /**
