@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/typebook")
+@RequestMapping("/typebooks")
 public class TypeBookController {
 
     private final ITypeBookUseCase iTypeBookUseCase;

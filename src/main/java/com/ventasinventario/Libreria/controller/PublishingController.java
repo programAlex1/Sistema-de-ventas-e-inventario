@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/publishing")
+@RequestMapping("/publishings")
 public class PublishingController {
 
     private final IPublishingUseCase iPublishingUseCase;

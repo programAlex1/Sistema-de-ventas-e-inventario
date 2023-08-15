@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class BookController {
 
     private final IBookUseCase iBookUseCase;
