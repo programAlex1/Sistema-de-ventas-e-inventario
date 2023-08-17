@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter @Setter
 @Entity
 @Table(name = "libro")
@@ -17,12 +19,6 @@ public class BookEntity {
     @Column(name = "titulo",nullable = false)
     private String title;
 
-    @Column(name = "autor",nullable = false)
-    private String author;
-
-    @Column(name = "id_employee",nullable = false)
-    private Long idEmployee;
-
     @Column(name = "precio",nullable = false)
     private double price;
 
@@ -33,6 +29,10 @@ public class BookEntity {
     private int stock;
 
     @ManyToOne()
+    @JoinColumn(name = "id_autor")
+    private AuthorEntity idAuthor;
+
+    @ManyToOne()
     @JoinColumn(name = "id_tipolibro")
     private TypeBookEntity idTypeBook;
 
@@ -41,8 +41,10 @@ public class BookEntity {
     private PublishingEntity idPublishing;
 
     @ManyToOne()
-    @JoinColumn(name = "id_employee", updatable = false,insertable = false)
-    private EmployeeEntity employeeEntity;
+    @JoinColumn(name = "id_empleado")
+    private EmployeeEntity idEmployee;
 
+    @OneToMany(mappedBy = "book")
+    private List<BookBallotEntity> bookList;
 
 }

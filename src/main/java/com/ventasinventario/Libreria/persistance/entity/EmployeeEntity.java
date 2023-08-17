@@ -39,7 +39,7 @@ public class EmployeeEntity {
     @Column(name = "dni",nullable = false)
     private String dni;
 
-    @OneToMany(mappedBy = "employeeEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idEmployee",cascade = CascadeType.ALL)
     private List<BookEntity> bookEntities;
 
 

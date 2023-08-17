@@ -12,10 +12,10 @@ public class BookDto {
     private String title;
 
 
-    private String author;
+    private AuthorDto idAuthor;
 
 
-    private Long idEmployee;
+    private EmployeeDto idEmployee;
 
 
     private double price;

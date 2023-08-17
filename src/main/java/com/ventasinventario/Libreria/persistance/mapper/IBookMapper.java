@@ -13,7 +13,7 @@ public interface IBookMapper {
 
     BookDto toBookDto(BookEntity bookEntity);
 
-    @Mapping(target ="employeeEntity",ignore = true )
+    @Mapping(target = "bookList",ignore = true)
     BookEntity toBookEntity(BookDto bookDto);
 
     List<BookDto> toBooksDto(List<BookEntity> listBookEntity);
