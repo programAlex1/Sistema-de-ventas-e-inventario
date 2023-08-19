@@ -20,6 +20,8 @@ public class BookBallotEntity {
     private BallotEntity ballot;
     @Column(name = "cantidad")
     private int quantity;
+    @Column(name = "precio")
+    private double price;
     @Column(name = "total")
     private double total;
 }
