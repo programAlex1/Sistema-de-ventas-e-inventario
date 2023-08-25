@@ -6,6 +6,7 @@ import com.ventasinventario.Libreria.domain.repository.IPublishingRepository;
 import com.ventasinventario.Libreria.domain.useCase.IBookUseCase;
 import com.ventasinventario.Libreria.exception.PublishindNotExistException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,8 @@ public class BookService implements IBookUseCase {
     private final IPublishingRepository iPublishingRepository;
     @Override
     public List<BookDto> findAll() {
-        return iBookRepository.findAll();
+        Sort sort = Sort.by(Sort.Direction.ASC, "id");
+        return iBookRepository.findAll(sort);
     }
 
     @Override

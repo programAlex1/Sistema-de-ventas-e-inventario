@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter @Setter
 @Entity
 @Table(name = "libroxboleta")
-public class BookBallotEntity {
+public class BookSaleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +17,7 @@ public class BookBallotEntity {
     private BookEntity book;
     @ManyToOne()
     @JoinColumn(name = "id_boleta")
-    private BallotEntity ballot;
+    private SaleEntity ballot;
     @Column(name = "cantidad")
     private int quantity;
     @Column(name = "precio")

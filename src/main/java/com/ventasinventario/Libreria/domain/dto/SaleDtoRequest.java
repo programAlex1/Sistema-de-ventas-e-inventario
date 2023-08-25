@@ -1,7 +1,5 @@
 package com.ventasinventario.Libreria.domain.dto;
 
-import com.ventasinventario.Libreria.persistance.entity.CustomerEntity;
-import com.ventasinventario.Libreria.persistance.entity.EmployeeEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +11,7 @@ import java.util.List;
 @Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BallotDto {
+public class SaleDtoRequest {
 
     private Long id;
 
@@ -27,6 +25,6 @@ public class BallotDto {
 
     private String method; // Le paso
 
-    private List<BookBallotDto> bookList; // Le paso
+    private List<BookSaleRequestDto> bookList; // Le paso
 
 }

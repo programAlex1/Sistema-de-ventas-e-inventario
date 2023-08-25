@@ -7,6 +7,7 @@ import com.ventasinventario.Libreria.persistance.crud.IBookCrudRepository;
 import com.ventasinventario.Libreria.persistance.entity.BookEntity;
 import com.ventasinventario.Libreria.persistance.mapper.IBookMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class BookRepository implements IBookRepository {
     private final IBookCrudRepository iBookCrudRepository;
 
     @Override
-    public List<BookDto> findAll() {
-        return iBookMapper.toBooksDto(iBookCrudRepository.findAll());
+    public List<BookDto> findAll(Sort sort) {
+        return iBookMapper.toBooksDto(iBookCrudRepository.findAll(sort));
     }
 
     @Override
@@ -51,5 +52,10 @@ public class BookRepository implements IBookRepository {
     public List<BookDto> findByIdTypeBook(Long idTypeBook) {
         List<BookEntity> list = iBookCrudRepository.findByIdTypeBookId(idTypeBook);
         return iBookMapper.toBooksDto(list);
+    }
+
+    @Override
+    public void updateStock(Long id, int quantity) {
+        iBookCrudRepository.updateStock(id,quantity);
     }
 }

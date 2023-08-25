@@ -1,7 +1,9 @@
 package com.ventasinventario.Libreria.controller;
 
 
+import com.ventasinventario.Libreria.domain.dto.SaleDtoResponse;
 import com.ventasinventario.Libreria.domain.dto.CustomerDto;
+import com.ventasinventario.Libreria.domain.useCase.ISaleUseCase;
 import com.ventasinventario.Libreria.domain.useCase.ICustomerUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import java.util.List;
 public class CustomerController {
 
     private final ICustomerUseCase iCustomerUseCase;
+    private final ISaleUseCase iSaleUseCase;
 
 
     @GetMapping()
@@ -27,6 +30,12 @@ public class CustomerController {
     public ResponseEntity<CustomerDto> findById(@PathVariable Long idCustomer){
         return ResponseEntity.of(iCustomerUseCase.findById(idCustomer));
     }
+
+    @GetMapping("/{cardId}/sales")
+    public ResponseEntity<List<SaleDtoResponse>> findSalesByCardId(@PathVariable Long cardId){
+        return ResponseEntity.ok(iSaleUseCase.findByCardIdCustomer(cardId));
+    }
+
 
     @GetMapping("/name")
     public ResponseEntity<CustomerDto> findByFullName(@RequestParam(value = "name") String name){

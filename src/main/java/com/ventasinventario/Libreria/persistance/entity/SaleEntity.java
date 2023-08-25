@@ -1,8 +1,5 @@
 package com.ventasinventario.Libreria.persistance.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter @Setter
 @Table(name = "boleta")
-public class BallotEntity {
+public class SaleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,7 +26,7 @@ public class BallotEntity {
     private double total;
     @Column(name = "metodo_pago",nullable = false)
     private String method;
-    @OneToMany(mappedBy = "ballot",cascade = CascadeType.ALL)
-    private List<BookBallotEntity> bookList;
+    @OneToMany(mappedBy = "ballot",cascade = {CascadeType.ALL})
+    private List<BookSaleEntity> bookList;
 
 }

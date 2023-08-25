@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ExceptionsController {
 
-    @ExceptionHandler({PublishingNameEmptyException.class, PublishindNotExistException.class,CustomerExistException.class})
+    @ExceptionHandler({PublishingNameEmptyException.class, PublishindNotExistException.class,
+            CustomerExistException.class,InsufficientStockException.class, SaleNotExistException.class})
     public ProblemDetail badRequestException(RuntimeException e){
             return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST,e.getMessage());
     }
