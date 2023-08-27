@@ -1,8 +1,8 @@
-# Documentación de la API de Productos
+# Documentación de la API de Ventas e Inventario de una Libreria
 
 ## Introducción
 
-La API de Productos permite acceder y gestionar la información de una lista de productos.
+La API de Ventas e Inventario permite gestionar la información de una lista de productos y realizar el proceso de ventas.
 
 ## Recursos
 
