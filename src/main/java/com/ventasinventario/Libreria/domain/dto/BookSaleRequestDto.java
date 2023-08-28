@@ -11,7 +11,7 @@ public class BookSaleRequestDto {
 
     private Long idBook;
 
-    private Long idBallot;
+    private Long idSale;
 
     private double price;
 

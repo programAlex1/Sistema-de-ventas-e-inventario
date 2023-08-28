@@ -18,10 +18,10 @@ public interface ISaleMapper {
 
     @Mapping(source = "book.id", target = "idBook")
     @Mapping(source = "book.title", target = "nameBook")
-    @Mapping(source = "ballot.id", target = "idBallot")
+    @Mapping(source = "ballot.id", target = "idSale")
     BookSaleResponseDto toBookSaleResponseDto(BookSaleEntity bookSaleEntity);
     @Mapping(source = "idBook",target = "book.id")
-    @Mapping(source = "idBallot",target = "ballot.id")
+    @Mapping(source = "idSale",target = "ballot.id")
     BookSaleEntity toBookSaleEntity(BookSaleRequestDto bookSaleRequestDto);
 
     List<BookSaleEntity> toBookSaleEntityList(List<BookSaleRequestDto> bookSaleRequestDtos);

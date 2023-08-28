@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBookCrudRepository extends JpaRepository<BookEntity,Long> {
 
@@ -18,5 +19,7 @@ public interface IBookCrudRepository extends JpaRepository<BookEntity,Long> {
     @Transactional
     @Query("UPDATE BookEntity b SET b.stock = b.stock - :quantity WHERE b.id = :id")
     void updateStock(Long id,int quantity);
+
+    Optional<BookEntity> findByTitle(String title);
 }
 

@@ -28,19 +28,19 @@ public class BookEntity {
     @Column(name = "stock",nullable = false)
     private int stock;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_autor")
     private AuthorEntity idAuthor;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_tipolibro")
     private TypeBookEntity idTypeBook;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_editorial")
     private PublishingEntity idPublishing;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_empleado")
     private EmployeeEntity idEmployee;
 

@@ -29,13 +29,10 @@ public class SaleController {
 
     @PostMapping()
     public ResponseEntity<SaleDtoResponse> save(@RequestBody SaleDtoRequest saleDtoRequest){
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED)
+
+        return ResponseEntity.status(HttpStatus.CREATED)
                     .body(iSaleUseCase.save(saleDtoRequest));
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .build();
-        }
+
     }
 
     @GetMapping("/{idSale}")

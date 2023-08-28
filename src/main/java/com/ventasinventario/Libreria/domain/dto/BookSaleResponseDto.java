@@ -12,7 +12,7 @@ public class BookSaleResponseDto {
 
     private String nameBook;
 
-    private Long idBallot;
+    private Long idSale;
 
     private double price;
 

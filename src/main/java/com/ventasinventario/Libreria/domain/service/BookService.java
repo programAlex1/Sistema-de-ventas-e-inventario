@@ -1,10 +1,9 @@
 package com.ventasinventario.Libreria.domain.service;
 
 import com.ventasinventario.Libreria.domain.dto.BookDto;
-import com.ventasinventario.Libreria.domain.repository.IBookRepository;
-import com.ventasinventario.Libreria.domain.repository.IPublishingRepository;
+import com.ventasinventario.Libreria.domain.repository.*;
 import com.ventasinventario.Libreria.domain.useCase.IBookUseCase;
-import com.ventasinventario.Libreria.exception.PublishindNotExistException;
+import com.ventasinventario.Libreria.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,9 @@ public class BookService implements IBookUseCase {
     private final IBookRepository iBookRepository;
 
     private final IPublishingRepository iPublishingRepository;
+    private final IAuthorRepository iAuthorRepository;
+    private final ITypeBookRepository iTypeBookRepository;
+    private final IEmployeeRepository iEmployeeRepository;
     @Override
     public List<BookDto> findAll() {
         Sort sort = Sort.by(Sort.Direction.ASC, "id");
@@ -30,12 +32,23 @@ public class BookService implements IBookUseCase {
 
     @Override
     public BookDto save(BookDto bookDto) {
-        Long hola = bookDto.getIdPublishing().getId();
-        if(iPublishingRepository.findById(hola).isEmpty()){
-            throw new PublishindNotExistException();
+        if(iPublishingRepository.findById(bookDto.getIdPublishing().getId()).isEmpty())
+            throw new ResourceNotFoundException("Publishing not found with ID " + bookDto.getIdPublishing().getId());
+
+        if(iAuthorRepository.findById(bookDto.getIdAuthor().getId()).isEmpty())
+            throw new ResourceNotFoundException("Author not found with ID " + bookDto.getIdAuthor().getId());
+
+        if(iTypeBookRepository.findById(bookDto.getIdTypeBook().getId()).isEmpty())
+            throw new ResourceNotFoundException("Type of book not found with ID " + bookDto.getIdTypeBook().getId());
+
+        if(iEmployeeRepository.findById(bookDto.getIdEmployee().getId()).isEmpty())
+            throw new ResourceNotFoundException("Employee not found with ID " + bookDto.getIdEmployee().getId());
+
+        if(iBookRepository.findByTitle(bookDto.getTitle()).isEmpty()){
+            return iBookRepository.save(bookDto);
         }
 
-        return iBookRepository.save(bookDto);
+        throw new IllegalArgumentException("The Book already exists in the database ");
     }
 
     @Override

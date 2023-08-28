@@ -20,4 +20,6 @@ public interface IBookRepository {
     List<BookDto> findByIdTypeBook(Long idTypeBook);
 
     void updateStock(Long id,int quantity);
+
+    Optional<BookDto> findByTitle(String title);
 }
