@@ -16,9 +16,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-
 [GET] http://localhost:8080/books
-
 ```
 **Response:** 
 ```json
@@ -63,9 +61,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-
 [GET] http://localhost:8080/books/2
-
 ```
 **Response:** 
 ```json
@@ -107,9 +103,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-
 [GET] http://localhost:8080/books/typebook/2
-
 ```
 **Response:** 
 ```json
@@ -144,6 +138,118 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
         }
     }
     // ...
+]
+```
+## Obtener libros por rango de precio
+
+- Método: GET
+- URL: `/books/by-price`
+- Query parameters: `precioMin y precioMax`
+  
+**Request:**
+
+```
+[GET] http://localhost:8080/books/by-price?precioMin=25&precioMax=65
+```
+**Response:** 
+```json
+[
+    {
+        "id": 2,
+        "title": "El espacio",
+        "idAuthor": {
+            "id": 1,
+            "name": "Da vincci"
+        },
+        "idEmployee": {
+            "id": 1,
+            "name": "Andrea",
+            "lastname": "Coronel",
+            "cellphonenumber": "987654323",
+            "email": "andrea@gmail.com",
+            "dateofbirth": "2000-09-15",
+            "genre": "Masculino",
+            "dni": "95959595"
+        },
+        "price": 35.0,
+        "numberOfPages": 145,
+        "stock": 0,
+        "idTypeBook": {
+            "id": 2,
+            "name": "Ciencia Ficcion"
+        },
+        "idPublishing": {
+            "id": 3,
+            "name": "Macro"
+        }
+    }
+    //..
+]
+```
+## Crear un Libro
+
+- Método: POST
+- URL: `/books`
+  
+**Request:**
+
+```
+[GET] http://localhost:8080/books
+```
+**# Body**
+```json
+{
+    "title":"El espacio",
+    "idAuthor":{
+        "id":1
+    },
+    "idEmployee":{
+        "id":1
+    },
+    "price":35,
+    "numberOfPages":145,
+    "stock":20,
+    "idTypeBook":{
+        "id":2
+    },
+    "idPublishing":{
+        "id":3
+    }
+}
+```
+**Response:** 
+```json
+[
+    {
+        "id": 2,
+        "title": "El espacio",
+        "idAuthor": {
+            "id": 1,
+            "name": "Da vincci"
+        },
+        "idEmployee": {
+            "id": 1,
+            "name": "Andrea",
+            "lastname": "Coronel",
+            "cellphonenumber": "987654323",
+            "email": "andrea@gmail.com",
+            "dateofbirth": "2000-09-15",
+            "genre": "Masculino",
+            "dni": "95959595"
+        },
+        "price": 35.0,
+        "numberOfPages": 145,
+        "stock": 0,
+        "idTypeBook": {
+            "id": 2,
+            "name": "Ciencia Ficcion"
+        },
+        "idPublishing": {
+            "id": 3,
+            "name": "Macro"
+        }
+    }
+    //..
 ]
 ```
 
