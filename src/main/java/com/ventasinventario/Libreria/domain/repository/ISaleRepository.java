@@ -15,4 +15,6 @@ public interface ISaleRepository {
     Optional<SaleDtoResponse> findById(Long id);
 
     List<SaleDtoResponse> findByCardIdCustomer(Long cardId);
+
+    void delete(Long id);
 }

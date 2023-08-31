@@ -1,0 +1,59 @@
+[33mcommit 085cb18b5a931b63c511a8b98434a1563b52aaf6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Mon Aug 28 18:55:11 2023 -0500
+
+    :sparkles: Add validations and exceptions
+
+[33mcommit 8f100e65039d097790ac4c8f14b5a79a63a84ef9[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Fri Aug 25 15:13:43 2023 -0500
+
+    :sparkles: Add functionality of sales, exportToPdfReceipt with JasperReports and exceptions
+
+[33mcommit 8348c5d1eacddd1cc71fe0dcb6c5b051981ef88a[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Sat Aug 19 13:59:10 2023 -0500
+
+    :sparkles: Add Ballot and BallotXBook, added functionality, but could be improved at the structural level
+
+[33mcommit d4874c30e6b6f3e5dd5920a8b3f5cac3f50d37e2[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Thu Aug 17 00:56:26 2023 -0500
+
+    :sparkles: Add Author(all functions of crud),BallotEntity(single entity),BookBallotEntity(single entity) and small changes in book
+
+[33mcommit b8aa1cc19a48f61262db6f8ef0569e32ebd29c25[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Tue Aug 15 15:25:53 2023 -0500
+
+    :sparkles: Add SwaggerOpenApi
+
+[33mcommit 7cd38339892ca06a38208d3c6599135c862fdf60[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Tue Aug 15 15:21:32 2023 -0500
+
+    :sparkles: Add Customer and exception
+
+[33mcommit a128815a6b2fe9490e49e8ed09600f855f7b38fc[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Sat Aug 12 19:33:39 2023 -0500
+
+    :sparkles: Add book, add exception publishingNotExist and relationships
+
+[33mcommit 6271f1a0d599e8f2e881774b8bdaaf2e4f5dc073[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Fri Aug 11 21:05:55 2023 -0500
+
+    :sparkles: Add employee
+
+[33mcommit c1ff8075235bc0d9a0c9c29fa802406146dfbe94[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Fri Aug 11 19:38:04 2023 -0500
+
+    :sparkles: Add publishing and Exception
+
+[33mcommit 0f1053ca9fafadb2ebca077b1be4034cd781e345[m
+Author: programAlex1 <foyeralexander@hotmail.com>
+Date:   Fri Aug 11 18:19:47 2023 -0500
+
+    :sparkles: First Commit

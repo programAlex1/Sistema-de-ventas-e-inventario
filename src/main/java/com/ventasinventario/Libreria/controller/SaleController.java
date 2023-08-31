@@ -49,6 +49,11 @@ public class SaleController {
 
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable Long id){
+        return new ResponseEntity<>(iSaleUseCase.delete(id)?HttpStatus.OK: HttpStatus.NOT_FOUND);
+    }
+
 
 
 }

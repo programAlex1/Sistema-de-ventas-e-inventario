@@ -19,5 +19,7 @@ public interface ISaleUseCase {
 
     List<SaleDtoResponse> findByCardIdCustomer(Long cardId);
 
+    boolean delete(Long id);
+
     byte[] exportToPdf(Long id) throws JRException, FileNotFoundException;
 }

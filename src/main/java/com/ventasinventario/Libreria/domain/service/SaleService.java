@@ -60,7 +60,7 @@ public class SaleService implements ISaleUseCase {
                         if(book.getQuantity()>bookUpdate.getStock())
                             throw new InsufficientStockException();
 
-                        iBookRepository.updateStock(bookUpdate.getId(),book.getQuantity());
+                        iBookRepository.updateStockLess(bookUpdate.getId(),book.getQuantity());
                     })
         );
 
@@ -76,6 +76,22 @@ public class SaleService implements ISaleUseCase {
     @Override
     public List<SaleDtoResponse> findByCardIdCustomer(Long cardId) {
         return iSaleRepository.findByCardIdCustomer(cardId);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        Optional<SaleDtoResponse> saleDtoResponse= iSaleRepository.findById(id);
+        if(saleDtoResponse.isEmpty())
+            return false;
+
+        saleDtoResponse.get().getBookList().forEach(book ->
+                iBookRepository.findById(book.getIdBook()).ifPresent(
+                        bookUpdate -> iBookRepository.updateStockMore(bookUpdate.getId(),book.getQuantity())
+                ));
+        iSaleRepository.delete(id);
+        return true;
+
+
     }
 
     @Override

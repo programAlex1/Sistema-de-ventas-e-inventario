@@ -63,8 +63,13 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void updateStock(Long id, int quantity) {
-        iBookCrudRepository.updateStock(id,quantity);
+    public void updateStockLess(Long id, int quantity) {
+        iBookCrudRepository.updateStockLess(id,quantity);
+    }
+
+    @Override
+    public void updateStockMore(Long id, int quantity) {
+        iBookCrudRepository.updateStockMore(id,quantity);
     }
 
     @Override

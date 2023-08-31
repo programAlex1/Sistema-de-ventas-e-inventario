@@ -18,7 +18,13 @@ public interface IBookCrudRepository extends JpaRepository<BookEntity,Long> {
     @Modifying
     @Transactional
     @Query("UPDATE BookEntity b SET b.stock = b.stock - :quantity WHERE b.id = :id")
-    void updateStock(Long id,int quantity);
+    void updateStockLess(Long id, int quantity);
+
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE BookEntity b SET b.stock = b.stock + :quantity WHERE b.id = :id")
+    void updateStockMore(Long id, int quantity);
 
     Optional<BookEntity> findByTitle(String title);
 }
