@@ -4,6 +4,9 @@
 
 La API de Ventas e Inventario permite gestionar la información de una lista de productos y realizar el proceso de ventas.
 
+## Diagrama de Base de Datos
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/2c6235d3-d471-4f46-b213-f6d788d0fb92)
+
 ## Recursos
 
 # Libros
