@@ -11,11 +11,15 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 
 # Libros
 
-## Obtener todos los libros
+## Obtener todos los libros(Paginacion)
 
 - Método: GET
 - URL: `/books`
-
+- Query Paremeters(Optional): `page , size y sort`
+- *Page* : Indicas el numero de pagina a traer
+- *Size* : Que tamaño de registros quieres que tenga cada pagina
+- *Sort* : Ordenar por algun atibuto de forma asc(ascendete) y desc(descendente)
+  
 **Request:**
 
 ```
@@ -23,38 +27,64 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 ```
 **Response:** 
 ```json
-[
-    {
-        "id": 1,
-        "title": "Los tres cerditos",
-        "idAuthor": {
-            "id": 3,
-            "name": "Ricardo Palma"
-        },
-        "idEmployee": {
+{
+    "content": [
+        {
             "id": 2,
-            "name": "Luis",
-            "lastname": "Diaz",
-            "cellphonenumber": "94447154",
-            "email": "luis@gmail.com",
-            "dateofbirth": "2004-10-23",
-            "genre": "Masculino",
-            "dni": "111142214"
+            "title": "Los tres cerditos",
+            "idAuthor": {
+                "id": 1,
+                "name": "Ricardo Palma"
+            },
+            "idEmployee": {
+                "id": 1,
+                "name": "Luis",
+                "lastname": "Diaz",
+                "cellphonenumber": "94447154",
+                "email": "luis@gmail.com",
+                "dateofbirth": "2004-10-23",
+                "genre": "Masculino",
+                "dni": "111142214"
+            },
+            "price": 35.0,
+            "numberOfPages": 145,
+            "stock": 11,
+            "idTypeBook": {
+                "id": 2,
+                "name": "Terror"
+            },
+            "idPublishing": {
+                "id": 3,
+                "name": "Mar"
+            }
+        }, //...
+    ],
+    "pageable": {
+        "sort": {
+            "empty": false,
+            "unsorted": false,
+            "sorted": true
         },
-        "price": 25.0,
-        "numberOfPages": 100,
-        "stock": 1,
-        "idTypeBook": {
-            "id": 1,
-            "name": "Animado"
-        },
-        "idPublishing": {
-            "id": 2,
-            "name": "Futura"
-        }
-    }
-   // ...
-]
+        "offset": 0,
+        "pageSize": 1,
+        "pageNumber": 0,
+        "unpaged": false,
+        "paged": true
+    },
+    "last": false,
+    "totalElements": 2,
+    "totalPages": 2,
+    "size": 1,
+    "number": 0,
+    "sort": {
+        "empty": false,
+        "unsorted": false,
+        "sorted": true
+    },
+    "first": true,
+    "numberOfElements": 1,
+    "empty": false
+}
 ```
 ## Obtener un solo libro
 
