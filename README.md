@@ -23,7 +23,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-[GET] http://localhost:8080/books
+[GET] http://localhost:8080/books?page=0&size=1&sort=id,desc
 ```
 **Response:** 
 ```json
