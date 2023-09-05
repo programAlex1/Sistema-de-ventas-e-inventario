@@ -227,7 +227,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-[GET] http://localhost:8080/books
+[POST] http://localhost:8080/books
 ```
 **# Body**
 ```json
@@ -354,7 +354,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-[GET] http://localhost:8080/books/21
+[DELETE] http://localhost:8080/books/21
 ```
 **Response:** 
 ```http
@@ -474,7 +474,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 **Request:**
 
 ```
-[GET] http://localhost:8080/sales
+[POST] http://localhost:8080/sales
 ```
 **# Body**
 ```json
@@ -526,4 +526,17 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
     ]
 }
 ```
+## Eliminar una Venta
 
+- Método: Delete
+- URL: `/sales/{idSale}`
+  
+**Request:**
+
+```
+[DELETE] http://localhost:8080/sales/14
+```
+**Response:** 
+```http
+200 OK
+```
