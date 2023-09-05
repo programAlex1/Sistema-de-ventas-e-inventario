@@ -363,7 +363,7 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 
 ## Schema Libro
 
-<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Integer</td><td>Id del Libro</td></tr><tr><td>title</td><td>String</td><td>Nombre del Libro</td></tr><tr><td>idAuthor</td><td>Author</td><td>Objeto de Autor</td></tr><tr><td>idEmployee</td><td>Employee</td><td>Objeto de Empleado</td></tr><tr><td>price</td><td>number</td><td>Precio del Libro</td></tr><tr><td>numberOfPages</td><td>Integer</td><td>Numero de Paginas del Libro</td></tr><tr><td>stock</td><td>Integer</td><td>Cantidad de Libros</td></tr> <tr><td>idTypeBook</td><td>TypeBook</td><td>Objeto de Tipo de Libro</td></tr>  </tr> <tr><td>idPublishing</td><td>Publishing</td><td>Objeto de Editorial</td></tr></tbody></table>
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Long</td><td>Id del Libro</td></tr><tr><td>title</td><td>String</td><td>Nombre del Libro</td></tr><tr><td>idAuthor</td><td>Author</td><td>Objeto de Autor</td></tr><tr><td>idEmployee</td><td>Employee</td><td>Objeto de Empleado</td></tr><tr><td>price</td><td>number</td><td>Precio del Libro</td></tr><tr><td>numberOfPages</td><td>Integer</td><td>Numero de Paginas del Libro</td></tr><tr><td>stock</td><td>Integer</td><td>Cantidad de Libros</td></tr> <tr><td>idTypeBook</td><td>TypeBook</td><td>Objeto de Tipo de Libro</td></tr>  </tr> <tr><td>idPublishing</td><td>Publishing</td><td>Objeto de Editorial</td></tr></tbody></table>
 
 # Ventas
 
@@ -540,3 +540,28 @@ La API de Ventas e Inventario permite gestionar la información de una lista de 
 ```http
 200 OK
 ```
+## Schema Libro
+
+<table><thead><tr><th>Attribute</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Long</td><td>Id de la Venta</td></tr><tr><td>date</td><td>Date</td><td>Fecha de la Venta</td></tr><tr><td>idEmployee</td><td>Employee</td><td>Objeto de Empleado</td></tr><tr><td>idCustomer</td><td>Customer</td><td>Objeto de Cliente</td></tr><tr><td>total</td><td>double</td><td>Precio total de la venta</td></tr><tr><td>method</td><td>String</td><td>Metodo de Pago</td></tr><tr><td>bookList</td><td>List<BookSale></td><td>Lista de Objetos de Libros</td></tr></tbody></table>
+
+# Tipo de Libro
+
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/4602c0d5-e24d-4c3d-a0af-c9a66eedc018)
+
+# Editorial
+
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/97d6b2d3-62b6-4966-947b-b24ef80af43c)
+
+# Empleado
+
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/ae43fcb3-e2e0-4a53-8481-3cc04d9d1283)
+
+# Cliente
+
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/47393952-8b22-425c-974a-f4bc4b778a2e)
+
+# Autor del Libro
+
+![image](https://github.com/programAlex1/Sistema-de-ventas-e-inventario/assets/114450089/66391119-0e28-442c-a40d-7fa137913eff)
+
+
