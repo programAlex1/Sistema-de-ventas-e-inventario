@@ -5,6 +5,8 @@ import com.ventasinventario.Libreria.domain.repository.*;
 import com.ventasinventario.Libreria.domain.useCase.IBookUseCase;
 import com.ventasinventario.Libreria.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +22,8 @@ public class BookService implements IBookUseCase {
     private final ITypeBookRepository iTypeBookRepository;
     private final IEmployeeRepository iEmployeeRepository;
     @Override
-    public List<BookDto> findAll() {
-        Sort sort = Sort.by(Sort.Direction.ASC, "id");
-        return iBookRepository.findAll(sort);
+    public Page<BookDto> findAll(Pageable pageable) {
+        return iBookRepository.findAll(pageable);
     }
 
     @Override

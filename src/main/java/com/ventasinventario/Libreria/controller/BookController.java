@@ -4,6 +4,8 @@ package com.ventasinventario.Libreria.controller;
 import com.ventasinventario.Libreria.domain.dto.BookDto;
 import com.ventasinventario.Libreria.domain.useCase.IBookUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +20,8 @@ public class BookController {
     private final IBookUseCase iBookUseCase;
 
     @GetMapping()
-    public ResponseEntity<List<BookDto>> findAll(){
-        return ResponseEntity.ok(iBookUseCase.findAll());
+    public ResponseEntity<Page<BookDto>> findAll(Pageable pageable){
+        return ResponseEntity.ok(iBookUseCase.findAll(pageable));
     }
 
     @GetMapping("/{idBook}")

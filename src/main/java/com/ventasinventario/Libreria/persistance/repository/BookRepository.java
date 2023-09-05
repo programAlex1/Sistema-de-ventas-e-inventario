@@ -7,6 +7,8 @@ import com.ventasinventario.Libreria.persistance.crud.*;
 import com.ventasinventario.Libreria.persistance.entity.*;
 import com.ventasinventario.Libreria.persistance.mapper.IBookMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
@@ -24,8 +26,9 @@ public class BookRepository implements IBookRepository {
     private final ITypeBookCrudRepository iTypeBookCrudRepository;
     private final IAuthorCrudRepository iAuthorCrudRepository;
     @Override
-    public List<BookDto> findAll(Sort sort) {
-        return iBookMapper.toBooksDto(iBookCrudRepository.findAll(sort));
+    public Page<BookDto> findAll(Pageable pageable) {
+
+        return iBookCrudRepository.findAll(pageable).map(iBookMapper::toBookDto);
     }
 
     @Override
